@@ -29,7 +29,19 @@ namespace ImGuiNET.Unity
         [SerializeField] Platform.Type _platformType = Platform.Type.InputManager;
 
         [Header("Configuration")]
-        [SerializeField] IOConfig _initialConfiguration = default;
+        [SerializeField]
+        private IOConfig _initialConfiguration = new IOConfig()
+        {
+            DoubleClickTime = 0.3f,
+            DoubleClickMaxDist = 6,
+            DragThreshold = 6,
+            KeyRepeatDelay = 0.275f,
+            KeyRepeatRate = 0.05f,
+            FontGlobalScale = 1,
+            TextCursorBlink = true,
+            ResizeFromEdges = true,
+            MemoryCompactTimer = 60
+        };
         [SerializeField] FontAtlasConfigAsset _fontAtlasConfiguration = null;
         [SerializeField] IniSettingsAsset _iniSettings = null;  // null: uses default imgui.ini file
 
