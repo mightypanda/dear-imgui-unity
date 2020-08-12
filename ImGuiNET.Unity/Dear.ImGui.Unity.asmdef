@@ -1,7 +1,7 @@
 {
-    "name": "RG.ImGui.Unity",
+    "name": "Dear.ImGui.Unity",
     "references": [
-        "GUID:20ee313e09faec446a26ffa1daf5636b"
+        "Dear.ImGui"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

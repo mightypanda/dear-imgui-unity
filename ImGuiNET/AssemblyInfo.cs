@@ -1,4 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("RG.ImGui.Unity")]
-[assembly: InternalsVisibleTo("RG.ImGui.Unity.Editor")]
+[assembly: InternalsVisibleTo("Dear.ImGui.Unity")]
+[assembly: InternalsVisibleTo("Dear.ImGui.Unity.Editor")]

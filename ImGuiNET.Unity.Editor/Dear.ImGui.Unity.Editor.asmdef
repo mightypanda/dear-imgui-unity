@@ -1,8 +1,8 @@
 {
-    "name": "RG.ImGui.Unity.Editor",
+    "name": "Dear.ImGui.Unity.Editor",
     "references": [
-        "GUID:20ee313e09faec446a26ffa1daf5636b",
-        "GUID:fed1b9451fde4474bbc2aad5bda39aca"
+        "Dear.ImGui",
+        "Dear.ImGui.Unity"
     ],
     "includePlatforms": [
         "Editor"
