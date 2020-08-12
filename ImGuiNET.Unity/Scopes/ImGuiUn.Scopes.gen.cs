@@ -3,7 +3,7 @@ namespace ImGuiNET
     using System;
     using UnityEngine;
 
-    public class ScopeTreeNode : ImGuiScope
+    public class ScopeTreeNode : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeTreeNode(string label) { ReturnValue = ImGui.TreeNode(label); }
@@ -12,7 +12,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.TreePop(); }
     }
 
-    public class ScopeTreeNodeEx : ImGuiScope
+    public class ScopeTreeNodeEx : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeTreeNodeEx(string label) { ReturnValue = ImGui.TreeNodeEx(label); }
@@ -22,13 +22,13 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.TreePop(); }
     }
 
-    public class ScopeTreePop : ImGuiScope
+    public class ScopeTreePop : GUI.Scope
     {
         public ScopeTreePop() { ImGui.TreePop(); }
         protected override void CloseScope() { ImGui.TreePop(); }
     }
 
-    public class ScopeTreePush : ImGuiScope
+    public class ScopeTreePush : GUI.Scope
     {
         public ScopeTreePush() { ImGui.TreePush(); }
         public ScopeTreePush(string str_id) { ImGui.TreePush(str_id); }
@@ -36,7 +36,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.TreePop(); }
     }
 
-    public class ScopePopup : ImGuiScope
+    public class ScopePopup : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopePopup(string str_id) { ReturnValue = ImGui.BeginPopup(str_id); }
@@ -44,7 +44,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndPopup(); }
     }
 
-    public class ScopePopupContextItem : ImGuiScope
+    public class ScopePopupContextItem : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopePopupContextItem() { ReturnValue = ImGui.BeginPopupContextItem(); }
@@ -53,7 +53,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndPopup(); }
     }
 
-    public class ScopePopupContextVoid : ImGuiScope
+    public class ScopePopupContextVoid : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopePopupContextVoid() { ReturnValue = ImGui.BeginPopupContextVoid(); }
@@ -62,7 +62,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndPopup(); }
     }
 
-    public class ScopePopupContextWindow : ImGuiScope
+    public class ScopePopupContextWindow : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopePopupContextWindow() { ReturnValue = ImGui.BeginPopupContextWindow(); }
@@ -72,7 +72,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndPopup(); }
     }
 
-    public class ScopePopupModal : ImGuiScope
+    public class ScopePopupModal : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopePopupModal(string name) { ReturnValue = ImGui.BeginPopupModal(name); }
@@ -81,14 +81,14 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndPopup(); }
     }
 
-    public class ScopeIndent : ImGuiScope
+    public class ScopeIndent : GUI.Scope
     {
         public ScopeIndent() { ImGui.Indent(); }
         public ScopeIndent(float indent_w) { ImGui.Indent(indent_w); }
         protected override void CloseScope() { ImGui.Unindent(); }
     }
 
-    public class ScopeWindow : ImGuiScope
+    public class ScopeWindow : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeWindow(string name) { ReturnValue = ImGui.Begin(name); }
@@ -97,7 +97,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.End(); }
     }
 
-    public class ScopeChild : ImGuiScope
+    public class ScopeChild : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeChild(string str_id) { ReturnValue = ImGui.BeginChild(str_id); }
@@ -111,7 +111,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndChild(); }
     }
 
-    public class ScopeChildFrame : ImGuiScope
+    public class ScopeChildFrame : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeChildFrame(uint id, Vector2 size) { ReturnValue = ImGui.BeginChildFrame(id, size); }
@@ -119,7 +119,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndChildFrame(); }
     }
 
-    public class ScopeCombo : ImGuiScope
+    public class ScopeCombo : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeCombo(string label, string preview_value) { ReturnValue = ImGui.BeginCombo(label, preview_value); }
@@ -127,7 +127,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndCombo(); }
     }
 
-    public class ScopeDragDropSource : ImGuiScope
+    public class ScopeDragDropSource : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeDragDropSource() { ReturnValue = ImGui.BeginDragDropSource(); }
@@ -135,27 +135,27 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndDragDropSource(); }
     }
 
-    public class ScopeDragDropTarget : ImGuiScope
+    public class ScopeDragDropTarget : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeDragDropTarget() { ReturnValue = ImGui.BeginDragDropTarget(); }
         protected override void CloseScope() { ImGui.EndDragDropTarget(); }
     }
 
-    public class ScopeGroup : ImGuiScope
+    public class ScopeGroup : GUI.Scope
     {
         public ScopeGroup() { ImGui.BeginGroup(); }
         protected override void CloseScope() { ImGui.EndGroup(); }
     }
 
-    public class ScopeMainMenuBar : ImGuiScope
+    public class ScopeMainMenuBar : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeMainMenuBar() { ReturnValue = ImGui.BeginMainMenuBar(); }
         protected override void CloseScope() { ImGui.EndMainMenuBar(); }
     }
 
-    public class ScopeMenu : ImGuiScope
+    public class ScopeMenu : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeMenu(string label) { ReturnValue = ImGui.BeginMenu(label); }
@@ -163,14 +163,14 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndMenu(); }
     }
 
-    public class ScopeMenuBar : ImGuiScope
+    public class ScopeMenuBar : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeMenuBar() { ReturnValue = ImGui.BeginMenuBar(); }
         protected override void CloseScope() { ImGui.EndMenuBar(); }
     }
 
-    public class ScopeTabBar : ImGuiScope
+    public class ScopeTabBar : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeTabBar(string str_id) { ReturnValue = ImGui.BeginTabBar(str_id); }
@@ -178,7 +178,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndTabBar(); }
     }
 
-    public class ScopeTabItem : ImGuiScope
+    public class ScopeTabItem : GUI.Scope
     {
         public bool ReturnValue { get; }
         public ScopeTabItem(string label) { ReturnValue = ImGui.BeginTabItem(label); }
@@ -187,7 +187,7 @@ namespace ImGuiNET
         protected override void CloseScope() { ImGui.EndTabItem(); }
     }
 
-    public class ScopeTooltip : ImGuiScope
+    public class ScopeTooltip : GUI.Scope
     {
         public ScopeTooltip() { ImGui.BeginTooltip(); }
         protected override void CloseScope() { ImGui.EndTooltip(); }

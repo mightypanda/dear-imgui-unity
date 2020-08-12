@@ -65,7 +65,7 @@ public class ScopeGeneratorEditor : EditorWindow
 ";
 
     private string classCode =
-        $@"    public class {TAG_CLASSNAME} : ImGuiScope
+        $@"    public class {TAG_CLASSNAME} : GUI.Scope
     {{
 {TAG_RETURN_PROP}{TAG_CTOR}        protected override void CloseScope() {{ ImGui.{TAG_END}(); }}
     }}

@@ -1,25 +1,25 @@
 {
-  "name": "com.realgames.dear-imgui",
-  "displayName": "Dear ImGui",
-  "version": "1.0.0",
-  "description": "Bloat-free Immediate Mode Graphical User interface",
-  "unity": "2019.3",
-  "keywords": [
-    "dear",
-    "imgui",
-    "ui"
-  ],
-  "author": {
-    "name": "Real Games",
-    "url": "https://realgames.co"
-  },
-  "dependencies": {
-    "com.unity.collections": "0.5.0-preview.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/realgamessoftware/dear-imgui-unity",
-    "revision": ""
-  },
-  "type": "library"
+    "name": "com.dear-imgui",
+    "displayName": "Dear ImGui",
+    "version": "1.0.0",
+    "description": "Bloat-free Immediate Mode Graphical User interface",
+    "unity": "2019.4",
+    "keywords": [
+        "dear",
+        "imgui",
+        "ui"
+    ],
+    "author": {
+        "name": "Real Games / Touky",
+        "url": "https://realgames.co"
+    },
+    "dependencies": {
+        "com.unity.collections": "0.5.0-preview.9"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/touky/dear-imgui-unity",
+        "revision": ""
+    },
+    "type": "library"
 }
