@@ -6,7 +6,7 @@ This is a fork of this repo: https://github.com/realgamessoftware/dear-imgui-uni
 
 ### Usage
 
-For a more detail usage, imgui_demo.cpp.txt is available at the root of the repo
+For a more detailed usage, imgui_demo.cpp.txt is available at the root of the repo
 
 - [Add package](https://docs.unity3d.com/Manual/upm-ui-giturl.html) from git URL: https://github.com/touky/dear-imgui-unity.git .
 - Add a `DearImGui` component to one of the objects in the scene.
