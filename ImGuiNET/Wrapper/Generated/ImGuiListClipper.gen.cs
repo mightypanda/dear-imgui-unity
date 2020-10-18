@@ -1,7 +1,7 @@
 using System;
+using UnityEngine;
 using System.Runtime.CompilerServices;
 using System.Text;
-using UnityEngine;
 
 namespace ImGuiNET
 {
@@ -31,24 +31,27 @@ namespace ImGuiNET
         public void Begin(int items_count)
         {
             float items_height = -1.0f;
-            ImGuiNative.ImGuiListClipper_Begin(NativePtr, items_count, items_height);
+            ImGuiNative.ImGuiListClipper_Begin((ImGuiListClipper*)(NativePtr), items_count, items_height);
         }
         public void Begin(int items_count, float items_height)
         {
-            ImGuiNative.ImGuiListClipper_Begin(NativePtr, items_count, items_height);
+            ImGuiNative.ImGuiListClipper_Begin((ImGuiListClipper*)(NativePtr), items_count, items_height);
         }
         public void Destroy()
         {
-            ImGuiNative.ImGuiListClipper_destroy(NativePtr);
+            ImGuiNative.ImGuiListClipper_destroy((ImGuiListClipper*)(NativePtr));
         }
         public void End()
         {
-            ImGuiNative.ImGuiListClipper_End(NativePtr);
+            ImGuiNative.ImGuiListClipper_End((ImGuiListClipper*)(NativePtr));
         }
         public bool Step()
         {
-            byte ret = ImGuiNative.ImGuiListClipper_Step(NativePtr);
+            byte ret = ImGuiNative.ImGuiListClipper_Step((ImGuiListClipper*)(NativePtr));
             return ret != 0;
         }
     }
 }
+
+
+

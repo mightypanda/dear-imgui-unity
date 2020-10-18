@@ -1,7 +1,7 @@
 using System;
+using UnityEngine;
 using System.Runtime.CompilerServices;
 using System.Text;
-using UnityEngine;
 
 namespace ImGuiNET
 {
@@ -56,7 +56,10 @@ namespace ImGuiNET
         public ImFontPtr DstFont => new ImFontPtr(NativePtr->DstFont);
         public void Destroy()
         {
-            ImGuiNative.ImFontConfig_destroy(NativePtr);
+            ImGuiNative.ImFontConfig_destroy((ImFontConfig*)(NativePtr));
         }
     }
 }
+
+
+

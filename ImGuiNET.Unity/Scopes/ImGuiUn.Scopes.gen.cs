@@ -132,7 +132,7 @@ namespace ImGuiNET
         public bool IsOpen { get; }
         public ScopePopupContextItem() { IsOpen = ImGui.BeginPopupContextItem(); }
         public ScopePopupContextItem(string str_id) { IsOpen = ImGui.BeginPopupContextItem(str_id); }
-        public ScopePopupContextItem(string str_id, ImGuiMouseButton mouse_button) { IsOpen = ImGui.BeginPopupContextItem(str_id, mouse_button); }
+        public ScopePopupContextItem(string str_id, ImGuiPopupFlags popup_flags) { IsOpen = ImGui.BeginPopupContextItem(str_id, popup_flags); }
         protected override void CloseScope() { if (IsOpen) ImGui.EndPopup(); }
     }
 
@@ -144,7 +144,7 @@ namespace ImGuiNET
         public bool IsOpen { get; }
         public ScopePopupContextVoid() { IsOpen = ImGui.BeginPopupContextVoid(); }
         public ScopePopupContextVoid(string str_id) { IsOpen = ImGui.BeginPopupContextVoid(str_id); }
-        public ScopePopupContextVoid(string str_id, ImGuiMouseButton mouse_button) { IsOpen = ImGui.BeginPopupContextVoid(str_id, mouse_button); }
+        public ScopePopupContextVoid(string str_id, ImGuiPopupFlags popup_flags) { IsOpen = ImGui.BeginPopupContextVoid(str_id, popup_flags); }
         protected override void CloseScope() { if (IsOpen) ImGui.EndPopup(); }
     }
 
@@ -156,8 +156,7 @@ namespace ImGuiNET
         public bool IsOpen { get; }
         public ScopePopupContextWindow() { IsOpen = ImGui.BeginPopupContextWindow(); }
         public ScopePopupContextWindow(string str_id) { IsOpen = ImGui.BeginPopupContextWindow(str_id); }
-        public ScopePopupContextWindow(string str_id, ImGuiMouseButton mouse_button) { IsOpen = ImGui.BeginPopupContextWindow(str_id, mouse_button); }
-        public ScopePopupContextWindow(string str_id, ImGuiMouseButton mouse_button, bool also_over_items) { IsOpen = ImGui.BeginPopupContextWindow(str_id, mouse_button, also_over_items); }
+        public ScopePopupContextWindow(string str_id, ImGuiPopupFlags popup_flags) { IsOpen = ImGui.BeginPopupContextWindow(str_id, popup_flags); }
         protected override void CloseScope() { if (IsOpen) ImGui.EndPopup(); }
     }
 
@@ -318,22 +317,20 @@ namespace ImGuiNET
         { return new ScopePopupContextItem(); }
         public static ScopePopupContextItem ScopePopupContextItem(string str_id)
         { return new ScopePopupContextItem(str_id); }
-        public static ScopePopupContextItem ScopePopupContextItem(string str_id, ImGuiMouseButton mouse_button)
-        { return new ScopePopupContextItem(str_id, mouse_button); }
+        public static ScopePopupContextItem ScopePopupContextItem(string str_id, ImGuiPopupFlags popup_flags)
+        { return new ScopePopupContextItem(str_id, popup_flags); }
         public static ScopePopupContextVoid ScopePopupContextVoid()
         { return new ScopePopupContextVoid(); }
         public static ScopePopupContextVoid ScopePopupContextVoid(string str_id)
         { return new ScopePopupContextVoid(str_id); }
-        public static ScopePopupContextVoid ScopePopupContextVoid(string str_id, ImGuiMouseButton mouse_button)
-        { return new ScopePopupContextVoid(str_id, mouse_button); }
+        public static ScopePopupContextVoid ScopePopupContextVoid(string str_id, ImGuiPopupFlags popup_flags)
+        { return new ScopePopupContextVoid(str_id, popup_flags); }
         public static ScopePopupContextWindow ScopePopupContextWindow()
         { return new ScopePopupContextWindow(); }
         public static ScopePopupContextWindow ScopePopupContextWindow(string str_id)
         { return new ScopePopupContextWindow(str_id); }
-        public static ScopePopupContextWindow ScopePopupContextWindow(string str_id, ImGuiMouseButton mouse_button)
-        { return new ScopePopupContextWindow(str_id, mouse_button); }
-        public static ScopePopupContextWindow ScopePopupContextWindow(string str_id, ImGuiMouseButton mouse_button, bool also_over_items)
-        { return new ScopePopupContextWindow(str_id, mouse_button, also_over_items); }
+        public static ScopePopupContextWindow ScopePopupContextWindow(string str_id, ImGuiPopupFlags popup_flags)
+        { return new ScopePopupContextWindow(str_id, popup_flags); }
         public static ScopePopupModal ScopePopupModal(string name)
         { return new ScopePopupModal(name); }
         public static ScopePopupModal ScopePopupModal(string name, ref bool p_open)

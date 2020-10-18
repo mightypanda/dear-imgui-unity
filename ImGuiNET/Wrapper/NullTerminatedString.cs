@@ -27,3 +27,7 @@ namespace ImGuiNET
         public static implicit operator string(NullTerminatedString nts) => nts.ToString();
     }
 }
+
+
+
+

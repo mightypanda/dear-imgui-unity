@@ -10,3 +10,6 @@ namespace ImGuiNET
         RootAndChildWindows = RootWindow | ChildWindows,
     }
 }
+
+
+

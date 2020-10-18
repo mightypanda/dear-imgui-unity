@@ -1,8 +1,8 @@
-using System.Text;
-using UnityEngine;
-
 namespace ImGuiNET
 {
+    using System.Text;
+    using UnityEngine;
+
     public unsafe partial struct ImFontPtr
     {
         public Vector2 CalcTextSizeA(float font_size, float max_width, float wrap_width, string text)
@@ -26,12 +26,13 @@ namespace ImGuiNET
             }
             else { native_text = null; }
             byte* native_text_end = null;
-            Vector2 ret = ImGuiNative.ImFont_CalcTextSizeA(NativePtr, font_size, max_width, wrap_width, native_text, native_text_end, (byte**)0);
+            Vector2 result = Vector2.zero;
+            ImGuiNative.ImFont_CalcTextSizeA(&result, NativePtr, font_size, max_width, wrap_width, native_text, native_text_end, (byte**)0);
             if (text_byteCount > Util.StackAllocationSizeLimit)
             {
                 Util.Free(native_text);
             }
-            return ret;
+            return new Vector2(result.x, result.y);
         }
 
         public Vector2 CalcTextSizeA(float font_size, float max_width, float wrap_width, char ch)
@@ -44,8 +45,9 @@ namespace ImGuiNET
             int native_text_offset = Encoding.UTF8.GetBytes(&ch, 1, native_text, text_byteCount);
             native_text[native_text_offset] = 0;
             byte* native_text_end = null;
-            Vector2 ret = ImGuiNative.ImFont_CalcTextSizeA(NativePtr, font_size, max_width, wrap_width, native_text, native_text_end, (byte**)0);
-            return ret;
+            Vector2 result = Vector2.zero;
+            ImGuiNative.ImFont_CalcTextSizeA(&result, NativePtr, font_size, max_width, wrap_width, native_text, native_text_end, (byte**)0);
+            return new Vector2(result.x, result.y);
         }
 
         public int CalcWordWrapPositionA(float scale, string text, float wrap_width)
