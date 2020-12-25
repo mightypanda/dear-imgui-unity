@@ -2,7 +2,8 @@
 
 UPM package for the immediate mode GUI library, Dear ImGui (https://github.com/ocornut/imgui).
 
-This is a fork of this repo: https://github.com/realgamessoftware/dear-imgui-unity
+This is a fork of this repo: https://github.com/touky/dear-imgui-unity
+Original project: https://github.com/realgamessoftware/dear-imgui-unity
 
 ### Usage
 
