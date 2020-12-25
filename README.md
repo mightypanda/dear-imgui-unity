@@ -9,7 +9,7 @@ Original project: https://github.com/realgamessoftware/dear-imgui-unity
 
 For a more detailed usage, imgui_demo.cpp.txt is available at the root of the repo
 
-- [Add package](https://docs.unity3d.com/Manual/upm-ui-giturl.html) from git URL: https://github.com/touky/dear-imgui-unity.git .
+- [Add package](https://docs.unity3d.com/Manual/upm-ui-giturl.html) from git URL: https://github.com/mightypanda/dear-imgui-unity.git .
 - Add a `DearImGui` component to one of the objects in the scene.
 - When using the Universal Render Pipeline, add a `Render Im Gui Feature` render feature to the renderer asset. Assign it to the `render feature` field of the DearImGui component.
 - Subscribe to the `ImGuiUn.Layout` event and use ImGui functions.
